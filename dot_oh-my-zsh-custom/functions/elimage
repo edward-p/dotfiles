@@ -1,0 +1,13 @@
+function usage() {
+	echo "USAGE:"
+	echo "elimage <files>"
+}
+
+case $1 in
+-h) usage && return 0 ;;
+esac
+
+while [ $# -ge 1 ]; do
+	echo $(curl -sF "name=@$1" https://img.vim-cn.com/)
+	shift
+done

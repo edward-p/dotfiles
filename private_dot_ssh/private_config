@@ -1,0 +1,61 @@
+Host *
+SendEnv COLORFGBG
+
+HOST cloudcone
+HostName    cloudcone.edward-p.xyz
+Port        2020
+User        edward
+
+HOST aur
+HostName    aur.archlinux.org
+Port        22
+User        aur
+
+HOST github
+HostName    github.com
+Port        22
+User        git
+
+Host ezpro
+HostName    192.168.123.1
+Port        2020
+User        edward
+RemoteForward /run/user/1000/gnupg/S.gpg-agent /run/user/1000/gnupg/S.gpg-agent.extra
+RemoteForward /run/user/1000/gnupg/S.gpg-agent.ssh /run/user/1000/gnupg/S.gpg-agent.ssh
+
+Host ezpro_ext
+HostName    ezpro.edward-p.xyz
+Port        2020
+User        edward
+RemoteForward /run/user/1000/gnupg/S.gpg-agent /run/user/1000/gnupg/S.gpg-agent.extra
+RemoteForward /run/user/1000/gnupg/S.gpg-agent.ssh /run/user/1000/gnupg/S.gpg-agent.ssh
+
+Host ezpro_root
+HostName    192.168.123.1
+Port        2020
+User        root
+
+Host ezpro_archiso
+HostName    192.168.1.1
+Port        22
+User        root
+
+Host leopard
+HostName	192.168.123.52
+Port        22
+User        edward
+
+Host enc
+HostName    192.168.123.54
+Port        8022
+User        u0_a147
+
+Host wsl
+HostName    192.168.123.52
+Port        8022
+User        edward
+
+Host archlinuxcn
+HostName    build.archlinuxcn.org
+Port        22
+User        edward-p

@@ -1,0 +1,44 @@
+# LANG
+#LC_ALL="en_US.UTF-8"
+#LANG=en_US.UTF-8
+#LANGUAGE=en_US
+#LC_CTYPE=zh_CN.UTF-8
+
+# Electron use kio instead
+ELECTRON_TRASH=kioclient5
+# Java stuffs
+#_JAVA_OPTIONS DEFAULT="-Dawt.useSystemAAFontSettings=lcd -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel"
+JAVA_HOME DEFAULT=/usr/lib/jvm/default
+JAVA_FONTS DEFAULT=/usr/share/fonts
+
+# Scale
+PLASMA_USE_QT_SCALING=1
+QT_AUTO_SCREEN_SCALE_FACTOR=1
+GDK_DPI_SCALE=1.15
+
+#Fcitx 5
+INPUT_METHOD  DEFAULT=fcitx5
+GTK_IM_MODULE DEFAULT=fcitx5
+QT_IM_MODULE  DEFAULT=fcitx5
+XMODIFIERS    DEFAULT=\@im=fcitx5
+
+#VA-API
+LIBVA_DRIVER_NAME DEFAULT=iHD
+#LIBVA_DRIVER_NAME=vdpau
+#VDPAU-VA-GL
+#VDPAU_DRIVER DEFAULT=va_gl
+#VDPAU_DRIVER DEFAULT=nvidia
+
+# Firefox VAAPI
+MOZ_WEBRENDER=1
+MOZ_X11_EGL=1
+
+#SSH
+SSH_AUTH_SOCK	DEFAULT="${XDG_RUNTIME_DIR}/gnupg/S.gpg-agent.ssh"
+
+#Editor
+EDITOR DEFAULT=vim
+
+TERMINAL DEFAULT=alacritty
+# Vulkan NVIDIA
+#VK_ICD_FILENAMES DEFAULT=/usr/share/vulkan/icd.d/intel_icd.x86_64.json

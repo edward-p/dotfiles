@@ -1,0 +1,13 @@
+{
+    "editor.fontFamily": "'Fira Code','Source Han Mono SC','Symbols Nerd Font'",
+    "window.zoomLevel": 1,
+    "terminal.integrated.fontFamily": "'Fira Code','Source Han Mono SC','Symbols Nerd Font'",
+    "pasteImage.defaultName": "YMMDDHHmmss",
+    "pasteImage.path": "/home/edward/Remote/kbfs/public/edward_p/paste/image",
+    "pasteImage.insertPattern": "![${imageFileName}](https://paste.edward-p.xyz/image/${imageFileName})",
+    "workbench.colorTheme": "Dracula",
+    "editor.formatOnPaste": false,
+    "editor.formatOnSave": false,
+    "editor.formatOnType": false,
+    "editor.fontSize": 16
+}

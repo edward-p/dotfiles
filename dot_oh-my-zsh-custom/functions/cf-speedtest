@@ -1,0 +1,4 @@
+curl --resolve files.edward-p.xyz:443:$1 \
+    "https://files.edward-p.xyz/lost+found/100mb_file" \
+    -o "/dev/null" -L
+

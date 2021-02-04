@@ -1,0 +1,10 @@
+#反复重试，直到成功
+local i=1
+while true; do
+  echo "Try $i at $(date)."
+  $* && break
+  (( i+=1 ))
+  echo
+  sleep .5
+done
+

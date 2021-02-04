@@ -1,0 +1,14 @@
+#generate steam one-time code
+python3 <<-PY
+'''
+Python begins
+'''
+from steampy import guard
+from os import environ
+import json
+with open(environ.get('HOME')+'/'+'.config'+'/'+'steam_guard.json', 'r') as load_f:
+    
+    steam_guard = json.load(load_f)
+    print(guard.generate_one_time_code(steam_guard.get('shared_secret')))
+
+PY

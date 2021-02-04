@@ -1,0 +1,22 @@
+clear(){
+	sudo iptables -t nat -F CLOUDFLARE
+}
+
+add(){
+	sudo iptables -t nat -A CLOUDFLARE -p tcp -m set --match-set cloudflare dst -m          comment --comment "Cloudflare IP" \
+	-j DNAT --to-destination "$1"
+	sudo sed  -i "s/^cf_dest.*/cf_dest='$1'/g" /etc/archwrt/dispatcher/dispatcher.conf
+}
+
+case $1 in
+	clear)
+		clear
+		;;
+	add)
+		add "$2"
+		;;
+	switch)
+		clear
+		add "$2"
+		;;
+esac

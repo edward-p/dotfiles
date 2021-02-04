@@ -1,0 +1,72 @@
+#upgrade your BaiduPCS-GO
+PCS=$HOME/.local/bin/baidupcs #path to binary
+[ -z $TMPDIR ] && TMPDIR=/tmp # set tmp dir
+PAGE=https://github.com/iikira/BaiduPCS-Go/releases
+NAME=BaiduPCS-Go
+
+ARCH=$(uname -m)
+OS=$(uname -o)
+
+if [ "$ARCH" = "x86_64" ]; then
+	case $OS in
+	"Android")
+		PLATFORM="android-21-amd64"
+		;;
+	"MS/Windows")
+		PLATFORM="windows-x64"
+		;;
+	"GNU/Linux")
+		PLATFORM="linux-amd64"
+		;;
+	esac
+elif [ "$ARCH" = "aarch64" ]; then
+	case $OS in
+	"Android")
+		PLATFORM="android-21-arm64"
+		;;
+	esac
+elif [ "$ARCH" = "armv7l" ]; then
+	case $OS in
+	"Android")
+		PLATFORM="android-16-armv7"
+		;;
+	"GNU/Linux")
+		PLATFORM="linux-armv7"
+		;;
+	esac
+elif [ "$ARCH" = "x86" ]; then
+	case $OS in
+	"Android")
+		PLATFORM="android-16-386"
+		;;
+	"MS/Windows")
+		PLATFORM="windows-x86"
+		;;
+	"GNU/Linux")
+		PLATFORM="linux-386"
+		;;
+	esac
+fi
+
+while [ -z $VERSION ]; do
+	curl -s $PAGE |
+		grep "css-truncate-target" |
+		sed -E "s/(<[^>]*>)|(^ *)|( *$)//g" |
+		grep -E "v[0-9].*\..*" |
+		read VERSION
+done
+
+CURRENT=$(${PCS} -v | cut -d ' ' -f 3)
+
+if [ "$CURRENT" = "$VERSION" ]; then
+	echo "$CURRENT is already the latest version!"
+else
+	echo "Downloading $VERSION..."
+	curl -L $PAGE/download/$VERSION/BaiduPCS-Go-$VERSION-$PLATFORM.zip >$TMPDIR/BaiduPCS-Go-$VERSION-$PLATFORM.zip
+	echo "Unzipping..."
+	unzip $TMPDIR/BaiduPCS-Go-$VERSION-$PLATFORM.zip BaiduPCS-Go-$VERSION-$PLATFORM/BaiduPCS-Go -d $TMPDIR
+	echo "Upgrade to $VERSION..."
+	mv $TMPDIR/BaiduPCS-Go-$VERSION-$PLATFORM/BaiduPCS-Go ${PCS}
+	rm -rf $TMPDIR/BaiduPCS-Go-$VERSION-$PLATFORM*
+	echo "Done."
+fi
