@@ -38,3 +38,4 @@ let g:lightline = {
 
 colorscheme one
 
+let g:NERDTreeWinPos = "left"
