@@ -1,8 +1,10 @@
 #!/bin/zsh
 
+PNPM_GLOBAL_DIR=/home/edward/Data/Cache/pnpm/global
+
 #PATH
 export GOPATH=~/.local/golang
-export PATH=~/.local/bin:$GOPATH/bin:~/.anbox_scripts:$PATH
+export PATH=~/.local/bin:$PNPM_GLOBAL_DIR/bin:$GOPATH/bin:~/.anbox_scripts:$PATH
 
 #EDITOR
 export EDITOR=vim
