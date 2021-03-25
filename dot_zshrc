@@ -68,9 +68,14 @@ fi
 plugins=(
   adb
   archlinux
-  git
-  zsh-syntax-highlighting
   chezmoi
+  git
+  gradle
+  mvn
+  pip
+  pnpm
+  tmux
+  zsh-syntax-highlighting
 )
 
 # User configuration
@@ -115,3 +120,4 @@ for f in $ZSH_CUSTOM/env/*; do
     source $f
   fi
 done
+
