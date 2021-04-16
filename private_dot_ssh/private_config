@@ -1,6 +1,21 @@
 Host *
 SendEnv COLORFGBG
 
+HOST some-arch
+HostName    vxgm.duckdns.org
+Port        22
+User        edward
+
+HOST class76
+HostName    47.107.232.162
+Port        22
+User        root
+
+HOST class76_podman
+HostName    47.107.232.162
+Port        22
+User        podman
+
 HOST cloudcone
 HostName    cloudcone.edward-p.xyz
 Port        2020
@@ -48,7 +63,7 @@ User        edward
 Host enc
 HostName    192.168.123.54
 Port        8022
-User        u0_a147
+User        u0_a353
 
 Host wsl
 HostName    192.168.123.52

@@ -4,7 +4,7 @@ PNPM_GLOBAL_DIR=/home/edward/Data/Cache/pnpm/global
 
 #PATH
 export GOPATH=~/.local/golang
-export PATH=~/.local/bin:$PNPM_GLOBAL_DIR/bin:$GOPATH/bin:~/.anbox_scripts:$PATH
+export PATH=~/.local/bin:$PNPM_GLOBAL_DIR/bin:$GOPATH/bin:$PATH
 
 #EDITOR
 export EDITOR=vim

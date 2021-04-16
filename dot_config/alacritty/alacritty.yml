@@ -2,6 +2,12 @@ env:
   TERM: xterm-256color
   COLORFGBG: 15;0
 
+    #shell:
+    #  program: /bin/bash
+    #  args:
+    #    - -l
+    #    - -c
+    #    - "exec tmux attach"
 # When true, bold text is drawn using the bright variant of colors.
 draw_bold_text_with_bright_colors: true
 
