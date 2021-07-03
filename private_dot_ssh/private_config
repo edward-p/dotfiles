@@ -1,8 +1,13 @@
 Host *
 SendEnv COLORFGBG
 
-HOST some-arch
-HostName    vxgm.duckdns.org
+HOST dogfun
+HostName    dogfun.duckdns.org 
+Port        2022
+User        dogfun
+
+HOST office
+HostName    192.168.124.4
 Port        22
 User        edward
 
@@ -63,7 +68,7 @@ User        edward
 Host enc
 HostName    192.168.123.54
 Port        8022
-User        u0_a353
+User        u0_a279
 
 Host wsl
 HostName    192.168.123.52

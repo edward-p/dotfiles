@@ -67,11 +67,13 @@ fi
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   adb
+  zsh-z
   archlinux
   chezmoi
   git
   gradle
   mvn
+  rust
   pip
   pnpm
   tmux
