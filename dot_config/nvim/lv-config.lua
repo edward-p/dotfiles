@@ -18,6 +18,7 @@ O.leader_key = ' '
 O.ignore_case = true
 O.smart_case = true
 O.lushmode = false
+O.transparent_window = false
 
 -- After changing plugin config it is recommended to run :PackerCompile
 O.plugin.hop.active = true
@@ -32,10 +33,12 @@ O.plugin.gitlinker.active = true
 O.plugin.zen.active = true
 O.plugin.debug.active = true
 O.plugin.telescope_project.active = true
+O.plugin.telescope_fzy.active = true
 O.plugin.lsp_rooter.active = true
 O.plugin.lazygit.active = true
 O.plugin.markdown_preview.active = true
 O.plugin.trouble.active = true
+-- O.plugin.todo_comments.active = true
 
 -- dashboard
 -- O.dashboard.custom_header = {""}
@@ -87,8 +90,13 @@ O.lang.ruby.autoformat = true
 O.lang.go.autoformat = true
 
 -- rust
-O.lang.rust.active = true
 O.lang.rust.autoformat = true
+
+-- clang
+O.lang.clang.autoformat = false -- Set to true to enable auto-format in C/C++ files.
+
+
+
 -- create custom autocommand field (This would be easy with lua)
 
 -- Turn off relative_numbers
