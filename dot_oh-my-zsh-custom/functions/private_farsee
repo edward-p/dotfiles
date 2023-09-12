@@ -1,0 +1,77 @@
+# yapbcli for https://fars.ee/
+BASE_URL="https://fars.ee"
+
+function usage() {
+	echo "USAGE:"
+	echo "  farsee (all contents will be inputted from stdin)"
+	echo "  farsee [options] <params>"
+	echo
+	echo "OPTIONS:"
+	echo "	-s		shortening url"
+	echo "	-u <uuid>	updating paste"
+	echo "	-d <uuid>	deleting paste"
+	echo "	-v <vanity>	vanity pastes"
+	echo "	-q		return url only"
+	echo "	-p		private pastes"
+	echo "	-t <seconds>	sunsetting pastes (aka. self-destruct pastes)"
+	echo
+	echo "Visit https://fars.ee/ for more info."
+}
+
+curl_args=()
+url="$BASE_URL"
+
+while [ "$#" -gt 0 ]; do
+	case $1 in
+	-s)
+		url="$BASE_URL/u"
+		shift
+		;;
+	-u)
+		if [[ "${curl_args[*]}" =~ "DELETE" ]]; then
+			echo "Wrong combination of options!" 1>&2
+			usage
+			exit 1
+		fi
+		url="$BASE_URL/$2"
+		shift 2
+		curl_args+=('-X' 'PUT')
+		;;
+	-d)
+		if [[ "${curl_args[*]}" =~ "PUT" ]]; then
+			echo "Wrong combination of options!" 1>&2
+			usage
+			exit 1
+		fi
+		url="$BASE_URL/$2"
+		shift 2
+		curl_args+=('-X' 'DELETE')
+		;;
+	-v)
+		url="$BASE_URL/~$2"
+		shift 2
+		;;
+	-t)
+		curl_args+=('-F' "sunset=$2")
+		shift 2
+		;;
+	-q)
+		url+="/?u=1"
+		shift
+		;;
+	-p)
+		curl_args+=('-F' 'p=1')
+		shift
+		;;
+	-h | --help)
+		usage && return 0
+		;;
+	esac
+done
+
+if [[ ! "${curl_args[*]}" =~ "DELETE" ]]; then
+	curl_args+=('-F' 'c=@-')
+fi
+
+echo "curl ${curl_args[*]} $url"
+curl ${curl_args[*]} "$url"

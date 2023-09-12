@@ -1,0 +1,1 @@
+sudo bootctl --path=/boot set-oneshot auto-windows && reboot

@@ -1,0 +1,3 @@
+if [ -z "$(pidof gpg-agent)" ]; then
+	gpgconf --launch gpg-agent >/dev/null
+fi

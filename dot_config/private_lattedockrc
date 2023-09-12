@@ -1,0 +1,42 @@
+[ActionsWidget]
+ColumnState=AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAbYAAAACAQAAAQAAAAAAAAAAAAAAAH3/////AAAAgQAAAAAAAAACAAAA+gAAAAEAAAAAAAAAvAAAAAEAAAAAAAAD6AAAAAB9
+
+[ConfigDialog]
+eDP-1 Height 1080=636
+eDP-1 Width 1920=794
+
+[DownloadDialog Settings]
+eDP-1 Height 1080=514
+eDP-1 Width 1920=700
+
+[General]
+Number of Actions=0
+
+[LatteSettingsDialog]
+downloadWindowSize=800,550
+windowSize=700,708
+
+[LatteSettingsDialog][TabLayouts]
+columnWidths=60,,93,
+sortColumn=3
+sortOrder=0
+
+[PlasmaThemeExtended]
+outlineWidth=1
+
+[ScreenConnectors]
+10=eDP-1:::0,0 1920x1080
+11=eDP-1-1:::0,0 1920x1080
+
+[UniversalSettings]
+badges3DStyle=false
+canDisableBorders=false
+inAdvancedModeForEditSettings=true
+launchers=
+memoryUsage=0
+metaPressAndHoldEnabled=true
+mouseSensitivity=2
+screenTrackerInterval=2500
+showInfoWindow=true
+singleModeLayoutName=cyberpunk-Large
+version=2

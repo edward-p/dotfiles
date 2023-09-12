@@ -1,0 +1,1 @@
+eval "$(podman completion zsh)"

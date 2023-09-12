@@ -1,0 +1,12 @@
+BASE_URL=https://pb.edward-p.xyz
+
+case $1 in
+  -u|--url)
+    DATA="u=@-;type=*/*"
+    ;;
+  *)
+    DATA="c=@-;type=*/*"
+    ;;
+esac
+
+curl $BASE_URL -F $DATA

@@ -1,0 +1,12 @@
+set runtimepath+=/usr/share/vimrc
+
+source /usr/share/vimrc/vimrcs/basic.vim
+source /usr/share/vimrc/vimrcs/filetypes.vim
+call pathogen#infect('~/.vim_runtime/my_plugins/{}')
+source /usr/share/vimrc/vimrcs/plugins_config.vim
+source /usr/share/vimrc/vimrcs/extended.vim
+
+try
+source ~/.vim_runtime/my_configs.vim
+catch
+endtry

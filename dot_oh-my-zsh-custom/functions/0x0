@@ -1,0 +1,42 @@
+#upload file to 0x0.st and get Markdown format reference
+function usage() {
+    echo "USAGE:"
+    echo "  0x0 (read contents from stdin when no options)"
+    echo "  0x0 [option] <files>|<urls>"
+    echo "OPTIONS:"
+    echo "	-f	paste from files"
+    echo "	-u	paste from urls"
+    echo "	-s	shorten a url"
+}
+
+function paste() {
+    while [ $# -ge 1 ]; do
+        curl -F "$opt$1" "https://0x0.st/"
+        shift
+    done
+}
+
+# Get contents from stdin
+if [ "$#" -eq 0 ]; then
+    curl -F "file=@-" "https://0x0.st/"
+else
+    case $1 in
+        -h) usage && return 0 ;;
+        -f)
+            opt="file=@"
+            shift
+            paste "$@"
+            ;;
+        -u)
+            opt="url="
+            shift
+            paste "$@"
+            ;;
+        -s)
+            opt="shorten="
+            shift
+            paste "$@"
+            ;;
+        *) usage && return 0 ;;
+    esac
+fi
