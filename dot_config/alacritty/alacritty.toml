@@ -1,0 +1,51 @@
+[colors]
+draw_bold_text_with_bright_colors = true
+
+[colors.bright]
+black = "#0b141a"
+blue = "#0099ff"
+cyan = "#00a5ab"
+green = "#11ab00"
+magenta = "#9854ff"
+red = "#ff4053"
+white = "#ffffff"
+yellow = "#bf8c00"
+
+[colors.normal]
+black = "#0b141a"
+blue = "#0099ff"
+cyan = "#00a5ab"
+green = "#11ab00"
+magenta = "#9854ff"
+red = "#ff4053"
+white = "#ffffff"
+yellow = "#bf8c00"
+
+[colors.primary]
+background = "#ffffff"
+foreground = "#1A1A1A"
+
+[env]
+COLORFGBG = "15;0"
+TERM = "xterm-256color"
+WINIT_X11_SCALE_FACTOR = "1"
+
+[font]
+size = 12
+
+[font.bold]
+family = "Monospace"
+
+[font.italic]
+family = "Monospace"
+
+[font.normal]
+family = "Monospace"
+style = "Medium"
+
+[window]
+opacity = 1
+
+[window.dimensions]
+columns = 92
+lines = 36
